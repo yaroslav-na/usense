@@ -1,0 +1,37 @@
+.header {
+  padding: var(--indent-md);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--indent-md);
+
+  box-shadow: var(--shadow);
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--indent-md);
+    text-wrap: nowrap;
+
+    list-style: none;
+  }
+
+  &__badge {
+    display: inline-block;
+    padding-inline: var(--indent-sm);
+
+    background: var(--secondary);
+    color: var(--primary);
+  }
+
+  &__list-item {
+    border: 1px solid var(--secondary);
+    padding-right: var(--indent-sm);
+  }
+
+  &__date {
+    color: var(--tertiary);
+  }
+}

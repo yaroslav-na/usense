@@ -1,0 +1,52 @@
+<form autocomplete="off" action="" class="form">
+
+  <fieldset class="form__input-group">
+    <legend class="form__legend">I have</legend>
+
+    <label class="form__label">
+      <span class="form__label-hint">
+        Amount
+      </span>
+
+      <input [disabled]="isLoading" [placeholder]="1" name="amount-input-1" class="form__input" type="tel"
+        [(ngModel)]="input1" (ngModelChange)="handleInput1Change()">
+    </label>
+
+
+    <select [disabled]="isLoading" class="form__select" name="amount-select-1" id="amount-select-1"
+      [(ngModel)]="select1" (ngModelChange)="onSelectChange()">
+
+      @for (currency of currencies; track $index) {
+      <option [value]="currency" [disabled]="currency === select2">{{ currency }}</option>
+      }
+
+    </select>
+  </fieldset>
+
+  <fieldset class="form__input-group">
+    <legend class="form__legend">I receive</legend>
+
+    <label class="form__label">
+      <span class="form__label-hint">
+        Amount
+      </span>
+
+      <input [disabled]="isLoading" [placeholder]="currencyPrice" name="amount-input-2" class="form__input" type="tel"
+        [(ngModel)]="input2" (ngModelChange)="handleInput2Change()">
+    </label>
+
+
+    <select [disabled]="isLoading" class="form__select" name="amount-select-2" id="amount-select-2"
+      [(ngModel)]="select2" (ngModelChange)="onSelectChange()">
+
+      @for (currency of currencies; track $index) {
+      <option [value]="currency" [disabled]="currency === select1">{{ currency }}</option>
+      }
+
+    </select>
+  </fieldset>
+</form>
+
+@if (error) {
+<p class="hint">{{error}}</p>
+}

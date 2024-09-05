@@ -1,0 +1,19 @@
+<header class="header">
+  <ul class="header__list">
+    <li class="header__list-item">
+      <span class="header__badge">
+        EUR
+      </span>
+      {{currencies.EUR | number: '1.1-2'}}
+    </li>
+
+    <li class="header__list-item">
+      <span class="header__badge">
+        USD
+      </span>
+      {{currencies.USD | number: '1.1-2'}}
+    </li>
+  </ul>
+
+  <p class="header__date">{{date | date: "MMM dd, yyyy 'at' HH:mm"}}</p>
+</header>
